@@ -1,164 +1,650 @@
-const C=[{i:'images/VATAS.jpg',t:'Certificate of Participation – V.A.T.A.S. Seminar Series',s:'Violence Against Women &amp; Children, Anti-Illegal Drugs, Terrorism · March 1, 2024'},
-{i:'images/best_pantry.jpg',t:'Certificate of Recognition – Best Pantry',s:'KFC Balibago · December 30, 2022'},
-{i:'images/cssc_pio.jpg',t:'Certificate of Appreciation – Asst. Public Information Officer',s:'CSSC · Citi Global College College Department · June 25, 2024'},
-{i:'images/CyberSecurity.jpg',t:'Certificate of Participation – Cybersecurity',s:'Cybersecurity Seminar · August 15, 2024 · Umbria Commercial Center'},
-{i:'images/data_warehousing.jpg',t:'Certificate of Participation – Data Warehousing &amp; SQL',s:'Data Warehousing and SQL in Business Intelligence · August 15, 2024'},
-{i:'images/exploring_advance_Database.jpg',t:'Certificate of Recognition – Facilitator',s:'Exploring Advanced Database Algorithms: Efficiency, Scalability &amp; Security · Feb 21, 2024'},
-{i:'images/harnising_the_white_hatFacilitator.jpg',t:'Certificate of Appreciation – Facilitator',s:'Harnessing the White Hat: Ethical Hacking for Cyber Security · April 19, 2024'},
-{i:'images/HarnisingTheWhiteHatParticipation.jpg',t:'Certificate of Participation – Ethical Hacking',s:'Harnessing the White Hat: Ethical Hacking for Cyber Security · April 19, 2024'},
-{i:'images/innovation_technical_award.jpg',t:'Innovation and Technical Excellence Award',s:'Association of Computer Science &amp; Computer Technology · May 9, 2025'},
-{i:'images/navigating_the_data_landscape.jpg',t:'Certificate of Appreciation – Facilitator',s:'Navigating the Data Landscape: Trends, Tools &amp; Techniques · August 15, 2024'},
-{i:'images/panegyric_2024.jpg',t:'Certificate of Appreciation – Event Organizer',s:'Citi Global College Panegyric 2024 · December 1, 2024'},
-{i:'images/panegyric_2025.jpg',t:'Certificate of Appreciation – Event Organizer',s:'Citi Global College Panegyric 2025 · December 1, 2025'},
-{i:'images/ReaserchConference.jpg',t:'Certificate of Participation – Research Conference 2024',s:'Unveiling the Unknown: A Journey Into Research · May 20, 2024'},
-{i:'images/technical_officer_2025.jpg',t:'Certificate of Appreciation – Technical Officer (ACSCT)',s:'Association of Computer Science &amp; Computer Technology 2024–2025'},
-{i:'images/TheArtOfVisualization.jpg',t:'Certificate of Participation – Data Visualization',s:'The Art of Visualization: Transforming Data into Insights · August 15, 2024'},
-{i:'images/unlocking_the_world_of_data.jpg',t:'Certificate of Participation – Data Science in People Analytics',s:'Unlocking the World of Data · August 15, 2024'},
-{i:'images/unvieling_the_unkown.jpg',t:'Certificate of Attendance',s:'Research Conference: Unveiling the Unknown · May 20, 2024'},
-{i:'images/wadhwani_problem_solving.jpg',t:'Certificate of Completion – Problem Solving &amp; Innovation',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_self_presentation.jpg',t:'Certificate of Completion – Self-Presentation',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_interpersonal.jpg',t:'Certificate of Completion – Interpersonal Skills',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_professionalism.jpg',t:'Certificate of Completion – Professionalism',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_customer_centricity.jpg',t:'Certificate of Completion – Customer Centricity',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_work_productivity.jpg',t:'Certificate of Completion – Work Productivity Tools',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_online_comm.jpg',t:'Certificate of Completion – Online Communication &amp; Data Security',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_safety.jpg',t:'Certificate of Completion – Safety Practices',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_financial.jpg',t:'Certificate of Completion – Financial Literacy',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_startup.jpg',t:'Certificate of Completion – Start-up Mindset',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_entrepreneurship.jpg',t:'Certificate of Completion – Introduction to Entrepreneurship',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_obtain_job.jpg',t:'Certificate of Completion – Obtain an Appropriate Job',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_speaking.jpg',t:'Certificate of Completion – Effective Speaking and Listening Skills',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_writing.jpg',t:'Certificate of Completion – Impactful Writing Skills',s:'Wadhwani Foundation · Basic Level · April 14, 2024'},
-{i:'images/wadhwani_self_management.jpg',t:'Certificate of Completion – Self-Management',s:'Wadhwani Foundation · Basic Level · April 14, 2024'}];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apocalipse C. Buscato Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 
-let lbIdx=0;
-function openLightbox(i){lbIdx=i;showLb();document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden';}
-function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow='';}
-function showLb(){const d=C[lbIdx];document.getElementById('lbImg').src=d.i;document.getElementById('lbTitle').textContent=d.t;document.getElementById('lbIssuer').textContent=d.s;document.getElementById('lbCount').textContent='Certificate '+(lbIdx+1)+' of '+C.length;}
-function lbPrev(){lbIdx=(lbIdx-1+C.length)%C.length;showLb();}
-function lbNext(){lbIdx=(lbIdx+1)%C.length;showLb();}
-document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').style.display==='flex'){if(e.key==='ArrowLeft')lbPrev();if(e.key==='ArrowRight')lbNext();if(e.key==='Escape')closeLightbox();}});
+<style>
+.hero-contact-item a { color:#fff !important; text-decoration:none; }
+.hero-contact-item a:hover { color:#c9a84c !important; }
+.c-val a { color:#d4c9b0 !important; text-decoration:none; }
+.c-val a:hover { color:#c9a84c !important; }
+.info-value a { color:#f0e8d8 !important; text-decoration:none; }
+.ref-detail a { color:rgba(200,191,168,.6) !important; text-decoration:none; }
+.ref-detail a:hover { color:#c9a84c !important; }
 
-const slides=Array.from(document.querySelectorAll('#slidesTrack>.slide'));
-const dotsEl=document.getElementById('slideDots');
-const curEl=document.getElementById('curSlide');
-document.getElementById('totalSlides').textContent=slides.length;
-let cur=0,timer;
-slides.forEach((_,i)=>{const d=document.createElement('button');d.className='sdot'+(i===0?' active':'');d.addEventListener('click',e=>{e.stopPropagation();clearInterval(timer);goTo(i);startAuto();});dotsEl.appendChild(d);});
-function goTo(n){slides[cur].classList.remove('active');if(dotsEl.children[cur])dotsEl.children[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');if(dotsEl.children[cur])dotsEl.children[cur].classList.add('active');curEl.textContent=cur+1;}
-document.getElementById('prevBtn').addEventListener('click',e=>{e.stopPropagation();clearInterval(timer);goTo(cur-1);startAuto();});
-document.getElementById('nextBtn').addEventListener('click',e=>{e.stopPropagation();clearInterval(timer);goTo(cur+1);startAuto();});
-function startAuto(){timer=setInterval(()=>goTo(cur+1),4500);}
-startAuto();
+/* PROJECTS */
+#projects{background:var(--dark2)}
+.projects-grid{display:grid;grid-template-columns:1fr;gap:40px;max-width:900px}
+.project-card{background:var(--dark3);border:1px solid rgba(201,168,76,.15);overflow:hidden;transition:border-color .3s}
+.project-card:hover{border-color:rgba(201,168,76,.4)}
+.project-preview{position:relative;height:320px;overflow:hidden;background:#000;cursor:pointer}
+.project-preview iframe{position:absolute;top:0;left:0}
+.project-overlay{position:absolute;inset:0;background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.project-overlay:hover{background:rgba(0,0,0,.1)}
+.project-play{background:rgba(201,168,76,.9);color:#000;padding:14px 32px;font-size:14px;font-weight:500;letter-spacing:2px;font-family:'Jost',sans-serif;text-transform:uppercase}
+.project-info{padding:28px 32px}
+.project-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.project-title{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--cream);margin-bottom:12px}
+.project-desc{font-size:13px;line-height:1.8;color:rgba(200,191,168,.65);margin-bottom:20px}
+.project-links{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.project-btn-primary{padding:10px 24px;background:var(--gold);color:#000;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;font-weight:500;transition:background .3s}
+.project-btn-primary:hover{background:var(--gold-light)}
+.project-btn-ghost{padding:10px 24px;border:1px solid rgba(201,168,76,.4);color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;transition:all .3s}
+.project-btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.project-stack{display:flex;gap:8px;flex-wrap:wrap}
+.stack-tag{padding:5px 12px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);font-size:11px;color:var(--cream2);letter-spacing:1px}
+</style>
+</head>
+<body>
 
-function initAnim(){
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('visible');
-        e.target.querySelectorAll('.info-item,.work-duties li,.skill-bar-fill').forEach((el,i)=>{
-          el.style.transitionDelay=(i*0.07)+'s';
-          el.classList.add('visible');
-          if(el.classList.contains('skill-bar-fill'))el.style.width=el.dataset.width+'%';
-        });
-      }
-    });
-  },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('.reveal,.anim-left,.anim-right,.anim-scale,.anim-up,.section-label,.section-title,.about-quote,.profile-text p,.info-item').forEach(el=>obs.observe(el));
-}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initAnim);
-else initAnim();
+<nav>
+  <a class="nav-logo" href="#hero">A.C.B</a>
+  <ul class="nav-links">
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#work">Experience</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-// Smooth scroll (skips bare "#" links like the download button)
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  const h=a.getAttribute('href');
-  if(!h||h.length<2)return;
-  a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth'});});
-});
-
-// ===== DOWNLOAD RESUME (PDF) =====
-const dlBtn=document.getElementById('downloadResume');
-if(dlBtn){
-  dlBtn.addEventListener('click',function(e){
-    e.preventDefault();
-    if(typeof html2pdf==='undefined'){alert('PDF library failed to load. Please check your internet connection and try again.');return;}
-
-    const sec=t=>`<h2 style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8a6d1f;border-bottom:1px solid #c9a84c;padding-bottom:3px;margin:16px 0 8px">${t}</h2>`;
-    const item=(title,sub,date)=>`
-      <div style="page-break-inside:avoid;margin-bottom:7px">
-        <div style="display:flex;justify-content:space-between;font-size:12px">
-          <strong>${title}</strong><span style="color:#555">${date}</span>
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-ring">
+        <div class="hero-photo-inner">
+          <img src="images/profile.jpg" alt="Apocalipse C. Buscato">
         </div>
-        <div style="font-size:11.5px;color:#444">${sub}</div>
-      </div>`;
+      </div>
+    </div>
+    <div class="hero-eyebrow">Portfolio &amp; CV</div>
+    <h1 class="hero-name">Apocalipse<br><span>C. Buscato</span></h1>
+    <p class="hero-subtitle">Sta. Rosa, Laguna &middot; Philippines</p>
+    <p class="hero-degree">Bachelor of Science in Computer Science</p>
+    <div class="hero-contacts">
+      <div class="hero-contact-item"><span class="hci">📞</span>0992-150-2112</div>
+      <div class="hero-contact-item"><span class="hci">🌐</span><a href="https://www.facebook.com/profile.php?id=61584889795384" target="_blank">facebook.com/profile.php?id=61584889795384</a></div>
+      <div class="hero-contact-item"><span class="hci">✉️</span><a href="https://mail.google.com/mail/?view=cm&to=apocalipsebuscato29@gmail.com" target="_blank">apocalipsebuscato29@gmail.com</a></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#profile" class="btn-gold">View Profile</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="#" class="btn-outline" id="downloadResume">⬇ Download Resume (PDF)</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat"><div class="hero-stat-num">23</div><div class="hero-stat-label">Years Old</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">BS</div><div class="hero-stat-label">Computer Science</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">PH</div><div class="hero-stat-label">Philippines</div></div>
+  </div>
+</section>
+<div class="divider"></div>
 
-    const html=`
-    <div style="font-family:Arial,Helvetica,sans-serif;color:#111;padding:28px 34px;width:700px;background:#fff">
-      <div style="text-align:center;border-bottom:2px solid #c9a84c;padding-bottom:10px">
-        <div style="font-size:26px;font-weight:bold;letter-spacing:1px">APOCALIPSE C. BUSCATO</div>
-        <div style="font-size:12px;margin-top:4px">BS Computer Science · Citi Global College</div>
-        <div style="font-size:11px;color:#444;margin-top:6px">
-          0992-150-2112 · apocalipsebuscato29@gmail.com<br>
-          Blk 10 Lot 46 Ph. 3, Brgy. Dila, Golden City, Sta. Rosa, Laguna 4026
+<section id="profile">
+  <div class="section-wrap">
+    <div class="section-label">01 — Profile</div>
+    <h2 class="section-title">About <em>Me</em></h2>
+    <div class="about-grid">
+      <div>
+        <div class="profile-text">
+          <p>I am a 23-year-old fresh graduate with a Bachelor of Science in Computer Science from Citi Global College. With hands-on experience in IT, administrative work, and game development, I am now ready to take on new professional challenges and contribute meaningfully to the tech industry.</p>
+          <div class="about-quote">"Driven by passion for technology and a commitment to excellence, I strive to turn knowledge into real-world impact."</div>
+          <p>Throughout my academic journey, I developed strong technical and interpersonal skills from facilitating seminars and leading student organizations, to building software and completing a 300-hour OJT. I am eager to grow, learn continuously, and be a reliable asset to any organization I join.</p>
+        </div>
+      </div>
+      <div class="info-grid reveal">
+        <div class="info-item"><span class="info-label">Full Name</span><span class="info-value">Apocalipse C. Buscato</span></div>
+        <div class="info-item"><span class="info-label">Birthday</span><span class="info-value">January 29, 2003</span></div>
+        <div class="info-item"><span class="info-label">Age</span><span class="info-value">23 Years Old</span></div>
+        <div class="info-item"><span class="info-label">Religion</span><span class="info-value">MCGI</span></div>
+        <div class="info-item"><span class="info-label">Course</span><span class="info-value">BS Computer Science · 2025–2026</span></div>
+        <div class="info-item"><span class="info-label">School</span><span class="info-value">Citi Global College</span></div>
+        <div class="info-item"><span class="info-label">Address</span><span class="info-value">Blk 10 Lot 46 Ph. 3, Brgy. Dila<br>Golden City, Sta. Rosa, Laguna 4026</span></div>
+        <div class="info-item"><span class="info-label">Contact</span><span class="info-value">0992-150-2112</span></div>
+        <div class="info-item"><span class="info-label">Email</span><span class="info-value"><a href="https://mail.google.com/mail/?view=cm&to=apocalipsebuscato29@gmail.com" target="_blank">apocalipsebuscato29@gmail.com</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<section id="education">
+  <div class="section-wrap">
+    <div class="section-label">02 — Education</div>
+    <h2 class="section-title">Academic <em>Journey</em></h2>
+    <div class="edu-timeline">
+      <div class="edu-card reveal anim-left"><div class="edu-period">2013–2014</div><div class="edu-school">Dila Elementary School</div><div class="edu-level">Intermediate School</div><div class="edu-address">Brgy. Dila Southdrive, Sta. Rosa, Laguna</div></div>
+      <div class="edu-card reveal anim-right" style="transition-delay:.1s"><div class="edu-period">2018–2019</div><div class="edu-school">Citi Global College</div><div class="edu-level">Junior High School</div><div class="edu-address">13 JP Rizal St. Bayanwalk Arcade, Poblacion Dos, Cabuyao, Laguna</div></div>
+      <div class="edu-card reveal anim-left" style="transition-delay:.2s"><div class="edu-period">2020–2021</div><div class="edu-school">Citi Global College</div><div class="edu-level">Senior High School</div><div class="edu-address">13 JP Rizal St. Bayanwalk Arcade, Poblacion Dos, Cabuyao, Laguna</div></div>
+      <div class="edu-card reveal anim-right" style="transition-delay:.3s"><div class="edu-period">2025–2026</div><div class="edu-school">Citi Global College</div><div class="edu-level">College — BS Computer Science</div><div class="edu-address">13 JP Rizal St. Bayanwalk Arcade, Poblacion Dos, Cabuyao, Laguna</div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<section id="work">
+  <div class="section-wrap">
+    <div class="section-label">03 — Work Experience</div>
+    <h2 class="section-title">Career <em>History</em></h2>
+    <div class="work-list">
+      <div class="work-card reveal anim-left"><div><div class="work-company">Mandaue Foam</div><div class="work-role">Delivery Helper &middot; Bagger</div><ul class="work-duties"><li>Delivery Helper</li><li>Bagger</li></ul></div><div><div class="work-period">2020–2021</div></div></div>
+      <div class="work-card reveal anim-left" style="transition-delay:.1s"><div><div class="work-company">Jollibee Cabuyao</div><div class="work-role">Fry Man</div><ul class="work-duties"><li>Fry man</li></ul><div class="work-badge">3 Months</div></div><div><div class="work-period">2021</div></div></div>
+      <div class="work-card reveal anim-left" style="transition-delay:.2s"><div><div class="work-company">KFC Balibago</div><div class="work-role">Pantry &middot; Fry Man</div><ul class="work-duties"><li>Pantry</li><li>Fry man</li></ul></div><div><div class="work-period">2021–2022</div></div></div>
+      <div class="work-card reveal anim-left" style="transition-delay:.3s"><div><div class="work-company">Citi Global College</div><div class="work-role">Student Assistant</div><ul class="work-duties"><li>Student Assistant</li></ul></div><div><div class="work-period">2022–2025</div></div></div>
+      <div class="work-card reveal anim-left" style="transition-delay:.4s"><div><div class="work-company">RNH Realty &amp; Management Inc.</div><div class="work-role">Administrative &amp; IT Intern — OJT</div><ul class="work-duties"><li>Administrative &amp; IT Intern</li><li>Duration: 300 Hours</li></ul><div class="work-badge">OJT · 300 Hours</div></div><div><div class="work-period">July–October 2025</div></div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<section id="certificates">
+  <div class="section-wrap">
+    <div class="section-label">04 — Certificates</div>
+    <h2 class="section-title">Awards &amp; <em>Certifications</em></h2>
+    <div class="slideshow-container reveal">
+      <div class="slides-track" id="slidesTrack">
+        <div class="slide active" onclick="openLightbox(0)" style="cursor:pointer">
+          <img src="images/VATAS.jpg" alt="Certificate of Participation – V.A.T.A.S. Seminar Series" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – V.A.T.A.S. Seminar Series</div>
+              <div class="cert-issuer">Violence Against Women & Children, Anti-Illegal Drugs, Terrorism · March 1, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(1)" style="cursor:pointer">
+          <img src="images/best_pantry.jpg" alt="Certificate of Recognition – Best Pantry" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Recognition – Best Pantry</div>
+              <div class="cert-issuer">KFC Balibago · December 30, 2022</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(2)" style="cursor:pointer">
+          <img src="images/cssc_pio.jpg" alt="Certificate of Appreciation – Asst. Public Information Officer" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Appreciation – Asst. Public Information Officer</div>
+              <div class="cert-issuer">CSSC · Citi Global College College Department · June 25, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(3)" style="cursor:pointer">
+          <img src="images/CyberSecurity.jpg" alt="Certificate of Participation – Cybersecurity" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – Cybersecurity</div>
+              <div class="cert-issuer">Cybersecurity Seminar · August 15, 2024 · Umbria Commercial Center</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(4)" style="cursor:pointer">
+          <img src="images/data_warehousing.jpg" alt="Certificate of Participation – Data Warehousing & SQL" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – Data Warehousing & SQL</div>
+              <div class="cert-issuer">Data Warehousing and SQL in Business Intelligence · August 15, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(5)" style="cursor:pointer">
+          <img src="images/exploring_advance_Database.jpg" alt="Certificate of Recognition – Facilitator" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Recognition – Facilitator</div>
+              <div class="cert-issuer">Exploring Advanced Database Algorithms: Efficiency, Scalability & Security · Feb 21, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(6)" style="cursor:pointer">
+          <img src="images/harnising_the_white_hatFacilitator.jpg" alt="Certificate of Appreciation – Facilitator" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Appreciation – Facilitator</div>
+              <div class="cert-issuer">Harnessing the White Hat: Ethical Hacking for Cyber Security · April 19, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(7)" style="cursor:pointer">
+          <img src="images/HarnisingTheWhiteHatParticipation.jpg" alt="Certificate of Participation – Ethical Hacking" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – Ethical Hacking</div>
+              <div class="cert-issuer">Harnessing the White Hat: Ethical Hacking for Cyber Security · April 19, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(8)" style="cursor:pointer">
+          <img src="images/innovation_technical_award.jpg" alt="Innovation and Technical Excellence Award" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Innovation and Technical Excellence Award</div>
+              <div class="cert-issuer">Association of Computer Science & Computer Technology · May 9, 2025</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(9)" style="cursor:pointer">
+          <img src="images/navigating_the_data_landscape.jpg" alt="Certificate of Appreciation – Facilitator" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Appreciation – Facilitator</div>
+              <div class="cert-issuer">Navigating the Data Landscape: Trends, Tools & Techniques · August 15, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(10)" style="cursor:pointer">
+          <img src="images/panegyric_2024.jpg" alt="Certificate of Appreciation – Event Organizer" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Appreciation – Event Organizer</div>
+              <div class="cert-issuer">Citi Global College Panegyric 2024 · December 1, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(11)" style="cursor:pointer">
+          <img src="images/panegyric_2025.jpg" alt="Certificate of Appreciation – Event Organizer" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Appreciation – Event Organizer</div>
+              <div class="cert-issuer">Citi Global College Panegyric 2025 · December 1, 2025</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(12)" style="cursor:pointer">
+          <img src="images/ReaserchConference.jpg" alt="Certificate of Participation – Research Conference 2024" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – Research Conference 2024</div>
+              <div class="cert-issuer">Unveiling the Unknown: A Journey Into Research · May 20, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(13)" style="cursor:pointer">
+          <img src="images/technical_officer_2025.jpg" alt="Certificate of Appreciation – Technical Officer (ACSCT)" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Appreciation – Technical Officer (ACSCT)</div>
+              <div class="cert-issuer">Association of Computer Science & Computer Technology 2024–2025</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(14)" style="cursor:pointer">
+          <img src="images/TheArtOfVisualization.jpg" alt="Certificate of Participation – Data Visualization" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – Data Visualization</div>
+              <div class="cert-issuer">The Art of Visualization: Transforming Data into Insights · August 15, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(15)" style="cursor:pointer">
+          <img src="images/unlocking_the_world_of_data.jpg" alt="Certificate of Participation – Data Science in People Analytics" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Participation – Data Science in People Analytics</div>
+              <div class="cert-issuer">Unlocking the World of Data · August 15, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(16)" style="cursor:pointer">
+          <img src="images/unvieling_the_unkown.jpg" alt="Certificate of Attendance" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Attendance</div>
+              <div class="cert-issuer">Research Conference: Unveiling the Unknown · May 20, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(17)" style="cursor:pointer">
+          <img src="images/wadhwani_problem_solving.jpg" alt="Certificate of Completion – Problem Solving & Innovation" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Problem Solving & Innovation</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(18)" style="cursor:pointer">
+          <img src="images/wadhwani_self_presentation.jpg" alt="Certificate of Completion – Self-Presentation" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Self-Presentation</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(19)" style="cursor:pointer">
+          <img src="images/wadhwani_interpersonal.jpg" alt="Certificate of Completion – Interpersonal Skills" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Interpersonal Skills</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(20)" style="cursor:pointer">
+          <img src="images/wadhwani_professionalism.jpg" alt="Certificate of Completion – Professionalism" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Professionalism</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(21)" style="cursor:pointer">
+          <img src="images/wadhwani_customer_centricity.jpg" alt="Certificate of Completion – Customer Centricity" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Customer Centricity</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(22)" style="cursor:pointer">
+          <img src="images/wadhwani_work_productivity.jpg" alt="Certificate of Completion – Work Productivity Tools" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Work Productivity Tools</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(23)" style="cursor:pointer">
+          <img src="images/wadhwani_online_comm.jpg" alt="Certificate of Completion – Online Communication & Data Security" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Online Communication & Data Security</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(24)" style="cursor:pointer">
+          <img src="images/wadhwani_safety.jpg" alt="Certificate of Completion – Safety Practices" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Safety Practices</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(25)" style="cursor:pointer">
+          <img src="images/wadhwani_financial.jpg" alt="Certificate of Completion – Financial Literacy" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Financial Literacy</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(26)" style="cursor:pointer">
+          <img src="images/wadhwani_startup.jpg" alt="Certificate of Completion – Start-up Mindset" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Start-up Mindset</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(27)" style="cursor:pointer">
+          <img src="images/wadhwani_entrepreneurship.jpg" alt="Certificate of Completion – Introduction to Entrepreneurship" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Introduction to Entrepreneurship</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(28)" style="cursor:pointer">
+          <img src="images/wadhwani_obtain_job.jpg" alt="Certificate of Completion – Obtain an Appropriate Job" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Obtain an Appropriate Job</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(29)" style="cursor:pointer">
+          <img src="images/wadhwani_speaking.jpg" alt="Certificate of Completion – Effective Speaking and Listening Skills" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Effective Speaking and Listening Skills</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(30)" style="cursor:pointer">
+          <img src="images/wadhwani_writing.jpg" alt="Certificate of Completion – Impactful Writing Skills" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Impactful Writing Skills</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLightbox(31)" style="cursor:pointer">
+          <img src="images/wadhwani_self_management.jpg" alt="Certificate of Completion – Self-Management" style="width:100%;height:320px;object-fit:contain;background:#0a0a0a;display:block" loading="lazy">
+          <div class="slide-caption">
+            <div>
+              <div class="cert-title">Certificate of Completion – Self-Management</div>
+              <div class="cert-issuer">Wadhwani Foundation · Basic Level · April 14, 2024</div>
+            </div>
+            <div style="font-size:12px;color:rgba(201,168,76,0.5);white-space:nowrap;flex-shrink:0">click to enlarge</div>
+          </div>
+        </div>
+      </div>
+      <button class="slide-arrow prev" id="prevBtn">&#8592;</button>
+      <button class="slide-arrow next" id="nextBtn">&#8594;</button>
+      <div class="slide-dots" id="slideDots"></div>
+      <div class="slide-counter">Slide <span id="curSlide">1</span> of <span id="totalSlides">32</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<section id="projects">
+  <div class="section-wrap">
+    <div class="section-label">05 — Projects</div>
+    <h2 class="section-title">My <em>Projects</em></h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal anim-up">
+        <div class="project-preview">
+          <iframe src="https://apobuscato.github.io/Sir-Nur-GameDevelopment-/" 
+                  title="Dino Chase Game" 
+                  scrolling="no"
+                  style="width:100%;height:100%;border:none;pointer-events:none;transform:scale(0.8);transform-origin:top left;width:125%;height:125%">
+          </iframe>
+          <div class="project-overlay" onclick="window.open('https://apobuscato.github.io/Sir-Nur-GameDevelopment-/','_blank')">
+            <div class="project-play">▶ Play Game</div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tag">🎮 Game Development</div>
+          <div class="project-title">Dino Chase</div>
+          <div class="project-desc">A browser-based game developed as part of Game Development coursework. Control the dinosaur, dodge obstacles, and chase your high score!</div>
+          <div class="project-links">
+            <a href="https://apobuscato.github.io/Sir-Nur-GameDevelopment-/" target="_blank" class="project-btn-primary">🎮 Play Now</a>
+          </div>
+          <div class="project-stack">
+            <span class="stack-tag">HTML</span>
+            <span class="stack-tag">CSS</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">Game Dev</span>
+          </div>
         </div>
       </div>
 
-      ${sec('Profile')}
-      <p style="font-size:11.5px;line-height:1.6;margin:0">
-        Fresh graduate with a Bachelor of Science in Computer Science from Citi Global College.
-        Hands-on experience in IT, administrative work, and game development, with a completed
-        300-hour OJT. Eager to grow, learn continuously, and contribute meaningfully to the tech industry.
-      </p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
 
-      ${sec('Education')}
-      ${item('BS Computer Science','Citi Global College, Cabuyao, Laguna','2025–2026')}
-      ${item('Senior High School','Citi Global College','2020–2021')}
-      ${item('Junior High School','Citi Global College','2018–2019')}
-      ${item('Intermediate School','Dila Elementary School','2013–2014')}
+<section id="awards">
+  <div class="section-wrap">
+    <div class="section-label">06 — Awards</div>
+    <h2 class="section-title">Recognitions &amp; <em>Achievements</em></h2>
+    <div class="awards-grid">
+      <div class="award-card reveal anim-scale" style="transition-delay:0s"><div class="award-icon">🏆</div><div class="award-title">Innovation and Technical Excellence Award</div><div class="award-desc">Recognized for exceptional technical expertise, innovation, and commitment to ACSCT events and projects for two years. · May 9, 2025</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.05s"><div class="award-icon">🎓</div><div class="award-title">Certificate of Appreciation – Event Organizer (Panegyric 2025)</div><div class="award-desc">Exemplary service, leadership, and commitment as Event Organizer for Citi Global College Panegyric 2025. · December 1, 2025</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.1s"><div class="award-icon">🎓</div><div class="award-title">Certificate of Appreciation – Event Organizer (Panegyric 2024)</div><div class="award-desc">Exemplary service, leadership, and commitment as Event Organizer for Citi Global College Panegyric 2024. · December 1, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.15s"><div class="award-icon">📋</div><div class="award-title">CSSC – Asst. Public Information Officer</div><div class="award-desc">Invaluable contributions as Assistant Public Information Officer in the CGCians Supreme Student Council Organization. · June 25, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.2s"><div class="award-icon">💻</div><div class="award-title">Certificate of Appreciation – Technical Officer (ACSCT 2024–2025)</div><div class="award-desc">Outstanding contributions as ACSCT Technical Officer during the term of the Association of Computer Science and Computer Technology 2024–2025.</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.25s"><div class="award-icon">🔐</div><div class="award-title">Certificate of Appreciation – Facilitator (Ethical Hacking)</div><div class="award-desc">Served as Facilitator during "Harnessing the White Hat: Ethical Hacking for Cyber Security Excellence." · April 19, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.3s"><div class="award-icon">📊</div><div class="award-title">Certificate of Appreciation – Facilitator (Data Landscape)</div><div class="award-desc">Served as Facilitator for "Navigating the Data Landscape: Trends, Tools, and Techniques." · August 15, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.35s"><div class="award-icon">🗄️</div><div class="award-title">Certificate of Recognition – Facilitator (Advanced Database)</div><div class="award-desc">Served as Facilitator for "Exploring Advanced Database Algorithms: Enhancing Efficiency, Scalability, and Security." · February 21, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.4s"><div class="award-icon">⭐</div><div class="award-title">Certificate of Recognition – Best Pantry</div><div class="award-desc">Honored for outstanding performance as Best Pantry at KFC Balibago. · December 30, 2022</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.45s"><div class="award-icon">🔍</div><div class="award-title">Certificate of Participation – Ethical Hacking Seminar</div><div class="award-desc">Participated in "Harnessing the White Hat: Ethical Hacking for Cyber Security Excellence." · April 19, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.5s"><div class="award-icon">🛡️</div><div class="award-title">Certificate of Participation – Cybersecurity</div><div class="award-desc">Successfully participated in the Cybersecurity seminar at Umbria Commercial Center, Binan, Laguna. · August 15, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.55s"><div class="award-icon">📈</div><div class="award-title">Certificate of Participation – Data Visualization</div><div class="award-desc">Participated in "The Art of Visualization: Transforming Data into Insights." · August 15, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.6s"><div class="award-icon">🗃️</div><div class="award-title">Certificate of Participation – Data Warehousing &amp; SQL</div><div class="award-desc">Participated in "Data Warehousing and SQL in Business Intelligence." · August 15, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.65s"><div class="award-icon">🧬</div><div class="award-title">Certificate of Participation – Data Science in People Analytics</div><div class="award-desc">Participated in "Unlocking the World of Data: An Introduction to Data Science in People Analytics." · August 15, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.7s"><div class="award-icon">🔬</div><div class="award-title">Certificate of Participation – Research Conference 2024</div><div class="award-desc">Participated in Citi Global College Research Conference "Unveiling the Unknown: A Journey Into Research." · May 20, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.75s"><div class="award-icon">📜</div><div class="award-title">Certificate of Attendance – Research Conference 2024</div><div class="award-desc">Attended the Citi Global College Research Conference at Umbria 180 Sports Hall, Biñan Laguna. · May 20, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.8s"><div class="award-icon">⚖️</div><div class="award-title">Certificate of Participation – V.A.T.A.S. Seminar Series</div><div class="award-desc">Participated in V.A.T.A.S. seminar covering Violence Against Women, Anti-Illegal Drugs, Terrorism, Anti-Bastos Law, and Sexual Harassment. · March 1, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.85s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Problem Solving &amp; Innovation</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.9s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Self-Presentation</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:.95s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Interpersonal Skills</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Professionalism</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.05s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Customer Centricity</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.1s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Work Productivity Tools</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.15s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Online Communication &amp; Data Security</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.2s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Safety Practices</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.25s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Financial Literacy</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.3s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Start-up Mindset</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.35s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Introduction to Entrepreneurship</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.4s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Obtain an Appropriate Job</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.45s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Effective Speaking &amp; Listening Skills</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.5s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Impactful Writing Skills</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+      <div class="award-card reveal anim-scale" style="transition-delay:1.55s"><div class="award-icon">📜</div><div class="award-title">Certificate of Completion – Self-Management</div><div class="award-desc">Wadhwani Foundation · Basic Level · April 14, 2024</div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
 
-      ${sec('Work Experience')}
-      ${item('Administrative &amp; IT Intern (OJT, 300 hrs)','RNH Realty &amp; Management Inc.','Jul–Oct 2025')}
-      ${item('Student Assistant','Citi Global College','2022–2025')}
-      ${item('Pantry · Fry Man','KFC Balibago (Best Pantry Award, Dec 2022)','2021–2022')}
-      ${item('Fry Man','Jollibee Cabuyao','2021')}
-      ${item('Delivery Helper · Bagger','Mandaue Foam','2020–2021')}
-
-      ${sec('Projects')}
-      ${item('Dino Chase – Browser Game','HTML, CSS, JavaScript · apobuscato.github.io/Sir-Nur-GameDevelopment-/','')}
-
-      ${sec('Awards &amp; Leadership')}
-      <ul style="font-size:11.5px;line-height:1.6;margin:0;padding-left:18px">
-        <li>Innovation and Technical Excellence Award – ACSCT (May 9, 2025)</li>
-        <li>Technical Officer – ACSCT 2024–2025</li>
-        <li>Asst. Public Information Officer – CGCians Supreme Student Council (2024)</li>
-        <li>Event Organizer – Citi Global College Panegyric 2024 &amp; 2025</li>
-        <li>Facilitator – Ethical Hacking, Data Landscape, and Advanced Database seminars (2024)</li>
-        <li>Wadhwani Foundation – 16 Basic Level skills certificates (April 14, 2024)</li>
-      </ul>
-
-      ${sec('Skills')}
-      <p style="font-size:11.5px;line-height:1.6;margin:0">
-        Programming · Problem-Solving &amp; Logical Analysis · Critical Thinking · Management ·
-        Time Management · Teamwork &amp; Collaboration · Adaptability · Attention to Detail ·
-        IT Support · Data Management · Microsoft Office
-      </p>
-      <p style="font-size:11.5px;margin:6px 0 0"><strong>Languages:</strong> Filipino, Bisaya, English</p>
-
-      ${sec('References')}
-      <div style="font-size:11.5px;line-height:1.6">
-        <strong>Rey Anne Nidea</strong> (Colleague) – 0912-757-7052 · reyannenidea5@gmail.com<br>
-        <strong>Aubrey Shane C. Buscato</strong> (Sister) – 0906-597-7512 · aubreyshanecbuscato@gmail.com<br>
-        <strong>Angelo C. Buscato</strong> (Brother) – 0991-912-6819
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-label">07 — Skills</div>
+    <h2 class="section-title">Expertise &amp; <em>Abilities</em></h2>
+    <div class="skills-two-col">
+      <div class="reveal">
+        <div class="skills-col-title">Core Skills</div>
+        <div class="skill-item"><div class="skill-name"><span>Management Skills</span><span style="color:var(--gold)">85%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Programming</span><span style="color:var(--gold)">80%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Problem-Solving &amp; Logical Analysis</span><span style="color:var(--gold)">82%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Time Management</span><span style="color:var(--gold)">85%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Adaptability &amp; Flexibility</span><span style="color:var(--gold)">88%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="88"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Critical Thinking</span><span style="color:var(--gold)">83%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="83"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Teamwork &amp; Collaboration</span><span style="color:var(--gold)">90%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Work Ethic &amp; Reliability</span><span style="color:var(--gold)">92%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-name"><span>Attention to Detail</span><span style="color:var(--gold)">86%</span></div><div class="skill-bar-wrap"><div class="skill-bar-fill" data-width="86"></div></div></div>
       </div>
-    </div>`;
+      <div class="reveal" style="transition-delay:.2s">
+        <div class="skills-col-title" style="margin-bottom:20px">Languages</div>
+        <div class="lang-item"><div class="lang-dot"></div>Filipino</div>
+        <div class="lang-item"><div class="lang-dot"></div>Bisaya</div>
+        <div class="lang-item"><div class="lang-dot"></div>English</div>
+        <div style="margin-top:36px">
+          <div class="skills-col-title" style="margin-bottom:16px">Technical Tags</div>
+          <div class="tag-list">
+            <span class="tag">Computer Science</span><span class="tag">Programming</span><span class="tag">IT Support</span><span class="tag">Administrative</span><span class="tag">Data Management</span><span class="tag">Technical Skills</span><span class="tag">Microsoft Office</span><span class="tag">Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
 
-    html2pdf().set({
-      margin:0,
-      filename:'Apocalipse_Buscato_Resume.pdf',
-      image:{type:'jpeg',quality:0.98},
-      html2canvas:{scale:2,useCORS:true},
-      jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
-      pagebreak:{mode:['css','legacy']}
-    }).from(html).save();
-  });
-}
+<section id="references">
+  <div class="section-wrap">
+    <div class="section-label">08 — References</div>
+    <h2 class="section-title">My <em>References</em></h2>
+    <div class="ref-grid">
+      <div class="ref-card reveal anim-up"><div class="ref-name">Rey Anne Nidea</div><div class="ref-role">Colleague</div><div class="ref-detail"><span class="rd-label">Phone</span>0912-757-7052</div><div class="ref-detail"><span class="rd-label">Email</span><a href="https://mail.google.com/mail/?view=cm&to=reyannenidea5@gmail.com" target="_blank">reyannenidea5@gmail.com</a></div></div>
+      <div class="ref-card reveal anim-up" style="transition-delay:.1s"><div class="ref-name">Aubrey Shane C. Buscato</div><div class="ref-role">Sister</div><div class="ref-detail"><span class="rd-label">Phone</span>0906-597-7512</div><div class="ref-detail"><span class="rd-label">Email</span><a href="https://mail.google.com/mail/?view=cm&to=aubreyshanecbuscato@gmail.com" target="_blank">aubreyshanecbuscato@gmail.com</a></div></div>
+      <div class="ref-card reveal anim-up" style="transition-delay:.2s"><div class="ref-name">Angelo C. Buscato</div><div class="ref-role">Brother</div><div class="ref-detail"><span class="rd-label">Phone</span>0991-912-6819</div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<section id="contact">
+  <div class="section-wrap">
+    <div class="section-label">09 — Contact</div>
+    <h2 class="section-title">Get In <em>Touch</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Let's connect and build something great together.</h3>
+        <div class="contact-detail"><div class="c-icon">📞</div><div class="c-text"><div class="c-label">Phone</div><div class="c-val">0992-150-2112</div></div></div>
+        <div class="contact-detail"><div class="c-icon">✉️</div><div class="c-text"><div class="c-label">Email</div><div class="c-val"><a href="https://mail.google.com/mail/?view=cm&to=apocalipsebuscato29@gmail.com" target="_blank">apocalipsebuscato29@gmail.com</a></div></div></div>
+        <div class="contact-detail"><div class="c-icon">🌐</div><div class="c-text"><div class="c-label">Facebook</div><div class="c-val"><a href="https://www.facebook.com/profile.php?id=61584889795384" target="_blank">facebook.com/profile.php?id=61584889795384</a></div></div></div>
+        <div class="contact-detail"><div class="c-icon">📍</div><div class="c-text"><div class="c-label">Address</div><div class="c-val">Blk 10 Lot 46 Ph. 3, Brgy. Dila<br>Golden City, Sta. Rosa, Laguna 4026</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Apocalipse C. Buscato</div>
+  <div class="footer-text">BS Computer Science · Citi Global College</div>
+  <div class="footer-text">© 2025 · Sta. Rosa, Laguna</div>
+</footer>
+
+<div id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">&#215;</button>
+  <button class="lb-prev" onclick="lbPrev()">&#8592;</button>
+  <button class="lb-next" onclick="lbNext()">&#8594;</button>
+  <img id="lbImg" src="" alt="" style="max-width:88vw;max-height:75vh;object-fit:contain;border:1px solid rgba(201,168,76,.2);display:block">
+  <div style="margin-top:14px;text-align:center;max-width:700px">
+    <div id="lbTitle" style="font-family:Georgia,serif;font-size:17px;color:#f0e8d8;margin-bottom:4px"></div>
+    <div id="lbIssuer" style="font-size:11px;letter-spacing:2px;color:#c9a84c;text-transform:uppercase"></div>
+    <div id="lbCount" style="font-size:10px;color:rgba(200,191,168,.35);margin-top:6px;letter-spacing:2px"></div>
+  </div>
+</div>
+
+<!-- PDF library (must load BEFORE script.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
